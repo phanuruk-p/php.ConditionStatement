@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #ffccda, #ffe6f0);
+            background: linear-gradient(to bottom,rgb(113, 162, 246),rgb(113, 162, 246));
             color: #333;
             margin: 0;
             padding: 0;
@@ -26,14 +26,14 @@
             padding: 30px;
             box-sizing: border-box;
             text-align: center;
-            border: 2px solid #ff99c8;
+            border: 2px rgb(102, 255, 127);
         }
 
         h1 {
             font-size: 28px;
             color: #ff66a3;
             margin-bottom: 20px;
-            background: linear-gradient(to right, #ff99c8, #ffcce6);
+            background: linear-gradient(to right,rgb(102, 255, 127),rgb(102, 255, 127));
             -webkit-background-clip: text;
             color: transparent;
         }
