@@ -10,10 +10,15 @@
     <?php 
     $height = $_POST['height'];
     $width = $_POST['width'];
-    $area = 0.5*$height*$width;
+    $area = triangleArea($height,$width);
     echo "<h3> รูปสามเหลี่ยมที่มีความสูง $height และมีความยาวฐาน $width </h3> ";
     echo "<br><br>";
     echo "<h3> คำนวณพื้นที่ได้ $area ตารางหน่วย </h3>";
+
+    function triangleArea($h,$w){
+        $a = 0.5*$h*$w;
+        return $a;
+    }
     ?>
 </body>
 </html>

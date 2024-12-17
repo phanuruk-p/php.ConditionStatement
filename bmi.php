@@ -85,17 +85,24 @@
         $age = $_POST['age'];
         $weight = $_POST['weight'];
         $height = $_POST['height'];
-
-        $heightInMeters = $height / 100;
-        $bmi = $weight / ($heightInMeters * $heightInMeters);
+        $bmi = bmipara ($height,$weight);
 
         echo "<div class='result'>";
         echo "<h3>ชื่อ: $firstName $lastName</h3>";
         echo "<h3>อายุ: $age ปี</h3>";
         echo "<h3>น้ำหนัก: $weight กิโลกรัม</h3>";
         echo "<h3>ส่วนสูง: $height เซนติเมตร</h3>";
-        echo "<h3>BMI: " . number_format($bmi, 2) . "</h3>";
-
+        echo "<h3>BMI: " . number_format($bmi , 2) . "</h3>";
+        sumbmi($bmi);
+        echo "</div>";
+    } else {
+        echo "<p>กรุณากรอกข้อมูลในฟอร์มเพื่อคำนวณ BMI</p>";
+    }
+    function bmipara($weight,$height){
+        $heightInMeters = $height / 100;
+        return $weight / ($heightInMeters * $heightInMeters);
+    }
+    function sumbmi($bmi){
         if ($bmi < 18.5) {
             echo "<p class='category'>ผลการประเมิน: น้ำหนักน้อยกว่ามาตรฐาน</p>";
         } elseif ($bmi >= 18.5 && $bmi < 24.9) {
@@ -105,13 +112,8 @@
         } else {
             echo "<p class='category'>ผลการประเมิน: โรคอ้วน</p>";
         }
-
-        echo "</div>";
-    } else {
-        echo "<p>กรุณากรอกข้อมูลในฟอร์มเพื่อคำนวณ BMI</p>";
     }
     ?>
-
 </div>
 </body>
 </html>
